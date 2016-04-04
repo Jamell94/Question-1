@@ -34,7 +34,7 @@ cin >> alpha;
 place == alpha;
 }
 while (check(alpha)==false);
-cout <<"Number of grid points, Nx?"<<endl;
+cout <<"Number of grid points, Nx? (Value can not exceed 100)"<<endl;
 do{
 cin >> Nx;
 place == Nx;
@@ -46,8 +46,23 @@ cin >> Nt;
 place == Nt;
 }
 while (check(Nt)==false);
-cout <<""
 
+double deltax;
+deltax = (L/Nx);
+cout << "deltax is: " << deltax << endl;
+
+vector <double> U;
+U.reserve(102);
+int i = 0;
+do {
+
+U[i]= i*deltax*(1-i*deltax);
+cout << U[i];
+i++;
+} while(i <= Nx);
+double gamma0,gamma1;
+U.insert(U.begin(),gamma0);
+U.insert(U.end(),gamma1);
 return 0;
 
 }
